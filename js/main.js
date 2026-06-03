@@ -178,5 +178,5 @@ function raceResultArray(answer, input) {
   }
 
   //containerに行ごと追加
-  container.prepend(row);
+  container.append(row);
 }
