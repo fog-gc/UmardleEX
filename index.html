@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umardle-EX</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <h1>Umardle-EX</h1>
+    <p>WordleのG1勝利馬バージョンの更新・機能追加版</p>
+
+    <!-- ゲーム進行ボタン -->
+    <div class="game-row">
+        <button id="btnReset">第1レースから</button>
+        <button id="btnGU">出走取消(諦める)</button>
+    </div>
+
+    <!-- ゲームモード選択   -->
+    ゲームモード：
+    <select id="gamemode">
+        <option value="2021">原作(1984年～2021年:国内のみ)</option>
+        <option value="all">完全版(1984年～現在:海外含む)</option>
+        <option value="recent">最近(2005年～現在:海外含む)</option>
+        <option value="umamusume">ウマ娘(オリジナル含む)</option>
+    </select>
+
+    <!-- レース番号 -->
+    <h2 id="raceNum"></h2>
+
+    <!-- 入力欄ほか -->
+    <div class="input-row">
+        <input type="search" id="input" size="25">
+        <input type="submit" id="start" value="出走">
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+
+    <!-- script結果表示 -->
+    <p id="hint"></p>
+    <p id="correct" class="correct"></p>
+    <p id="error" class="error"></p>
+    <p id="giveUp" class="giveUp"></p>
+    <div id="box-container" class="container"></div>
+    <hr>
+    <!-- 注記 -->
+    <p>※外国馬の場合、10文字以上となるケースがあります。</p>
+    <p>※このページは<a href="https://kuramiya.github.io/Umardle/">Umardle</a>を参考に作成しております。</p>
+    <p>※プログラムに関しては本家様を転用することなく、オリジナルで作成しました。</p>
+    <p>データ出典：<a href="https://www.makworld.net/horse/grade/G1win.html">各年度 G1(Jpn1)競走 優勝馬</a></p>
+    <p>更新：2026/06/01 東京優駿2026年優勝馬ロブチェンを追加。おめでとうございます。</p>
+    <p>作った人：<a href="https://x.com/fog_gc">@fog_gc</a></p>
+</body>
+
+</html>
