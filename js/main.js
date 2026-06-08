@@ -61,11 +61,21 @@ gamemode.addEventListener("change", () => {
 startEl.addEventListener("click", submitInput);
 
 // 2. 入力欄（inputEl）でEnterが押された時
+// 20260608 Update ----
+//MacEnterKey対応
+let isComposing = false;
+ inputEl.addEventListener("compositionstart", () => {
+  isComposing = true;
+});
+ inputEl.addEventListener("compositionend", () => {
+  isComposing = false;
+});
 inputEl.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
+  if (event.key === "Enter" && !isComposing) {
     submitInput();
   }
 });
+// 20260608 Update end ---
 
 //ギブアップボタンのclickイベント
 btnGUEl.addEventListener("click", giveUp);
