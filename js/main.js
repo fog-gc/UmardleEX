@@ -126,17 +126,16 @@ function giveUp() {
 
 //umardle判定
 function checkAnswer(inputValue) {
-  // 1. カタカナに変換
+  // カタカナに変換
   const input = logic.hiraToKata(inputValue);
 
-  // 2. inputがtableDataにあるかどうかチェック
+  // inputがtableDataにあるかどうかチェック
   if (!tableData.find(row => row[2] === input)) {
-    // エラーを表示して終了
+    // 存在しない場合エラーを表示して終了
     errorEl.textContent = "入力エラー。リストに無い馬名です。";
     return;
   }
 
-  // 以降はリストに存在する（正しい入力）の場合の処理
   errorEl.textContent = "";
 
   // 結果表示DOM起動
