@@ -133,7 +133,7 @@ function checkAnswer(inputValue) {
   if (!tableData.find(row => row[2] === input)) {
     // エラーを表示して終了
     errorEl.textContent = "入力エラー。リストに無い馬名です。";
-    return; // ここで処理を抜ける（ネストを浅くするテクニックです）
+    return;
   }
 
   // 以降はリストに存在する（正しい入力）の場合の処理
@@ -144,7 +144,7 @@ function checkAnswer(inputValue) {
 
   // レース数カウント
   raceNum += 1;
-  raceCount(); // ※元のコードで2回連続で呼ばれていたので整理が必要かもしれません
+  raceCount();
 
   // レース数表示更新 or 12レース経過でgive up
   if (raceNum > 12) {
